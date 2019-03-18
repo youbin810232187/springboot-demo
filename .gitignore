@@ -1,0 +1,45 @@
+HELP.md
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+*.tmp
+
+###log####
+*.log
+### Java template
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp

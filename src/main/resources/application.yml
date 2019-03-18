@@ -1,0 +1,53 @@
+#debug: true
+
+server:
+  port: 8080
+#  servlet:
+#    context-path: /youbin
+
+spring:
+  profiles:
+    active: prod
+  banner:
+    charset: utf-8
+    location: banner.txt
+
+#配置日志信息
+logging:
+  level: {com.youbin.springboot: trace,org: warn}
+  path: ./log
+  pattern:
+    file: "%d{yyyyMMdd HH:mm:ss}-[%thread] %-5level %logger{50}%M - %msg%n"
+    console: "%d{yyyyMMdd HH:mm:ss}-[%thread] %-5level %logger{50}.%M - %msg%n"
+
+
+
+
+person:
+    name: 张三${random.uuid}}
+    age: ${random.int(30)}
+    birth: 2019/03/04
+    maps: {k1: v1,k2: v2,k3: v3}
+    lists:
+      - dog
+      - cat
+    friend:
+      name: lilei
+      age: 12
+    boss: false
+    email: 1231@qqcom
+
+
+
+---
+spring:
+  profiles: dev
+server:
+  port: 8081
+
+
+---
+spring:
+  profiles: prod
+server:
+  port: 8082
