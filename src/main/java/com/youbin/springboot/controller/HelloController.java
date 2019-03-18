@@ -15,27 +15,34 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * @program: springboot-demo
- * @description:
- * @author: Mr.You
- * @create: 2019-03-11 18:54
+ * program: springboot-demo
+ * description:
+ * author: Mr.You
+ * create: 2019-03-11 18:54
  **/
 @RestController
 public class HelloController {
     private Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-    @Autowired
+
     private Environment environment;
 
     @Autowired
-    Person person;
+    public HelloController(Environment environment) {
+        this.environment = environment;
+    }
+
+    @GetMapping("/hell2")
+    public String hello2(){
+        return  "hello2";
+    }
 
     @GetMapping("/person/{id}")
     public Student testTest(@PathVariable Integer id){
         Student student = new Student();
         student.setName("youbin");
         student.setAge(id);
-        student.setBirth(new Date("2019/01/01"));
+        student.setBirth(new Date());
         return  student;
     }
 
@@ -46,8 +53,7 @@ public class HelloController {
 
     @GetMapping("/env")
     public String testenv(){
-        String javaHome = environment.getProperty("JAVA_HOME");
-        return  javaHome;
+        return  environment.getProperty("JAVA_HOME");
     }
 
     @GetMapping("/timeout")
@@ -104,6 +110,6 @@ public class HelloController {
         logger.info("这是info打印");
         logger.warn("这是warn打印");
         logger.error("这是error打印");
-        return person.toString();
+        return "person";
     }
 }
