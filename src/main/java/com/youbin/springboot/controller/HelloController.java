@@ -27,6 +27,7 @@ public class HelloController {
 
     private Environment environment;
 
+    /*推荐使用构造器注入*/
     @Autowired
     public HelloController(Environment environment) {
         this.environment = environment;
