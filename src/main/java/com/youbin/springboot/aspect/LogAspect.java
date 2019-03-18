@@ -15,6 +15,7 @@ import java.util.Arrays;
 public class LogAspect {
     private  Logger logger = LoggerFactory.getLogger(LogAspect.class);
 
+
     @Around("execution(* com.youbin.springboot.controller.HelloController.*(..))")
     public Object simpleLog(ProceedingJoinPoint pjp){
         Object o = null;
