@@ -25,6 +25,7 @@ public class HelloController {
     private Logger logger = LoggerFactory.getLogger(HelloController.class);
 
 
+
     private Environment environment;
 
     /*推荐使用构造器注入*/
