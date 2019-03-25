@@ -14,6 +14,7 @@ import java.util.Date;
 @Data
 @ToString
 public class Student {
+    private Integer id;
     private String name;
     private Integer age;
     private Date birth;

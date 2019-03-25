@@ -24,6 +24,7 @@ public class LogAspect {
             logger.info(args.toString());
             o = pjp.proceed();
             logger.info("return:" + o.toString());
+
             return o;
         } catch (Throwable e) {
             e.printStackTrace();

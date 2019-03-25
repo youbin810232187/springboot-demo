@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.youbin.springboot.dao.StudentMaper">
+
+    <!--开启二级缓存-->
+    <!--<cache/>-->
+
+
+    <resultMap id="studnetResultMap" type="com.youbin.springboot.pojo.Student">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="birth" property="birth"/>
+    </resultMap>
+
+
+    <select id="getStudentById" parameterType="int" resultMap="studnetResultMap">
+      SELECT id,name,age,birth FROM student where id = #{id}
+    </select>
+
+    <update id="updateStudent" parameterType="com.youbin.springboot.pojo.Student">
+        UPDATE student
+        SET `name` = #{nem},
+            age = #{age}
+        WHERE id = #{id}
+    </update>
+
+    <insert id="addStudent" parameterType="com.youbin.springboot.pojo.Student">
+        INSERT INTO student(`name`,age,birth)
+        VALUES(#{name},#{age},#{birth})
+    </insert>
+
+    <delete id="deleteStudentById" parameterType="int">
+        DELETE  FROM student
+        where id = #{id}
+    </delete>
+
+    <select id="listStudens" resultMap="studnetResultMap">
+        SELECT id,`name`,age,birth
+        from student
+    </select>
+
+</mapper>

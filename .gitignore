@@ -6,6 +6,7 @@ HELP.md
 
 ###log####
 *.log
+*.gz
 ### Java template
 *.class
 

@@ -11,6 +11,16 @@ spring:
   banner:
     charset: utf-8
     location: banner.txt
+  datasource:
+    url: jdbc:mysql://192.168.241.139:3306/mybatis?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: youbin
+    password: youbin
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+
+
 
 #配置日志信息
 logging:
@@ -36,6 +46,7 @@ person:
       age: 12
     boss: false
     email: 1231@qqcom
+
 
 
 
